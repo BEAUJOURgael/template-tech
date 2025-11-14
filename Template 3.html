@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TechRise – IA & Automatisation</title>
+
+<style>
+:root {
+  --p: #38bdf8;
+  --s: #a855f7;
+  --bg1: #0f172a;
+  --bg2: rgba(255,255,255,0.07);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body {
+  background: var(--bg1);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+/* NAV */
+header { padding-bottom:40px; }
+nav {
+  max-width:1100px; margin:0 auto;
+  padding:20px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.logo {
+  font-size:1.5rem; font-weight:700;
+  background:linear-gradient(90deg,var(--p),var(--s));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+nav ul {
+  display:flex; gap:24px; list-style:none;
+}
+nav a { color:var(--muted); text-decoration:none; }
+nav a:hover { color:var(--p); }
+
+/* HERO */
+.hero {
+  max-width:1100px; margin:60px auto 0;
+  padding:20px;
+  display:grid; grid-template-columns:2fr 1.3fr;
+  gap:30px; align-items:center;
+}
+.hero h1 { font-size:2.6rem; }
+.hero p { margin-top:12px; max-width:480px; color:var(--muted); }
+
+.btn {
+  padding:11px 22px; border-radius:999px; border:none;
+  text-decoration:none; font-size:.95rem; cursor:pointer;
+}
+.btn-primary {
+  background:linear-gradient(90deg,var(--p),var(--s));
+  color:#000; font-weight:600;
+}
+.btn-ghost {
+  background:transparent;
+  border:1px solid var(--muted);
+  color:var(--text);
+}
+
+.glass {
+  background:var(--bg2);
+  backdrop-filter: blur(12px);
+  padding:25px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+/* SECTIONS */
+section {
+  max-width:1100px; margin:60px auto; padding:0 20px;
+}
+h2 { font-size:1.9rem; margin-bottom:12px; }
+.sub { color:var(--muted); margin-bottom:28px; }
+
+/* GRID */
+.grid-3 {
+  display:grid; gap:22px;
+  grid-template-columns:repeat(3,1fr);
+}
+.card {
+  background:#0b1120;
+  padding:20px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+/* PRICING */
+.pricing {
+  display:grid; gap:20px;
+  grid-template-columns:repeat(3,1fr);
+}
+.price-card {
+  padding:22px; border-radius:16px;
+  background:#0b1120;
+  border:1px solid rgba(255,255,255,.2);
+}
+.price-card.featured {
+  border-color:var(--p);
+  box-shadow:0 0 20px rgba(56,189,248,.5);
+}
+.price {
+  font-size:1.6rem; margin:10px 0;
+}
+
+/* FORM */
+form {
+  background:#0b1120;
+  border-radius:18px;
+  padding:22px;
+  border:1px solid rgba(255,255,255,.2);
+  display:grid; gap:14px;
+}
+input, textarea {
+  padding:10px; border-radius:10px;
+  border:1px solid rgba(255,255,255,.2);
+  background:#0b1120; color:var(--text);
+}
+
+/* FOOTER */
+footer {
+  text-align:center; padding:26px; color:var(--muted);
+}
+
+@media(max-width:900px){
+  .hero { grid-template-columns:1fr; }
+  .grid-3, .pricing { grid-template-columns:1fr; }
+}
+</style>
+<script>
+function toggle() {
+  document.querySelector("nav ul").classList.toggle("open");
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">TechRise</div>
+    <ul>
+      <li><a href="#product">Produit</a></li>
+      <li><a href="#features">Fonctionnalités</a></li>
+      <li><a href="#pricing">Tarifs</a></li>
+      <li><a href="#demo">Démo</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <h1>Automatisez vos processus grâce à l’IA.</h1>
+      <p>Une plateforme SaaS moderne qui booste vos performances.</p>
+      <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="#demo">Demander une démo</a>
+        <a class="btn btn-ghost" href="#product">Voir le produit</a>
+      </div>
+    </div>
+
+    <div class="glass">
+      <h3>Dashboard IA</h3>
+      <p>Suivi en temps réel grâce à nos modèles prédictifs.</p>
+    </div>
+  </div>
+</header>
+
+<section id="product">
+  <h2>Un produit complet</h2>
+  <p class="sub">Pensé pour les équipes modernes.</p>
+
+  <div class="grid-3">
+    <div class="card"><h3>Automatisation</h3><p>Workflows intelligents.</p></div>
+    <div class="card"><h3>Intégrations</h3><p>Connectez tous vos outils.</p></div>
+    <div class="card"><h3>Analytics</h3><p>KPIs en temps réel.</p></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>Tarifs</h2>
+
+  <div class="pricing">
+    <div class="price-card"><h3>Starter</h3><p class="price">19€/mois</p></div>
+    <div class="price-card featured"><h3>Pro</h3><p class="price">49€/mois</p></div>
+    <div class="price-card"><h3>Entreprise</h3><p class="price">Sur mesure</p></div>
+  </div>
+</section>
+
+<section id="demo">
+  <h2>Demander une Démo</h2>
+
+  <form>
+    <input type="text" placeholder="Votre nom" required>
+    <input type="email" placeholder="Votre email" required>
+    <textarea rows="4" placeholder="Votre besoin"></textarea>
+    <button class="btn btn-primary">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 TechRise – Tous droits réservés.
+</footer>
+
+</body>
+</html>
